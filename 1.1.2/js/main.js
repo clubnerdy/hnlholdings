@@ -191,7 +191,7 @@ document.addEventListener("DOMContentLoaded", function () {
         handleHover(prevButton);
     };
 
-    //🎈.marquee
+    //🎈.marquee-contact
     if(window.innerWidth > 430){
         $('.marquee-contact').marquee({
             speed: 50,

@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     //🎈.marquee-contact
-    if(window.innerWidth > 430){
+    if(window.innerWidth > 480){
         $('.marquee-contact').marquee({
             speed: 50,
             delayBeforeStart: 0,
@@ -203,7 +203,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }else{
         $('.marquee-contact').marquee({
-            speed: 20,
+            speed: 10,
             delayBeforeStart: 0,
             direction: 'left',
             duplicated: true,
@@ -211,5 +211,57 @@ document.addEventListener("DOMContentLoaded", function () {
             startVisible: true,
         });
     }
+
+    //☝🏻스크롤 이벤트
+    window.addEventListener("scroll", function () {
+        console.log(window.scrollY);
+
+        window.addEventListener("scroll", function () {
+            const customer01 = document.querySelector(".trouble .item .customer01");
+            const comment01 = document.querySelector(".trouble .item01 .comment");
+            const customer02 = document.querySelector(".trouble .item .customer02");
+            const comment02 = document.querySelector(".trouble .item02 .comment");
+            const customer03 = document.querySelector(".trouble .item .customer03");
+            const comment03 = document.querySelector(".trouble .item03 .comment");
+            const customer04 = document.querySelector(".trouble .item .customer04");
+            const comment04 = document.querySelector(".trouble .item04 .comment");
+        
+            const scrollY = window.scrollY;
+        
+            // 각 스크롤 범위에 맞춰 클래스 추가 및 제거
+            if (scrollY > 5800 && scrollY <= 6000) {
+                customer01.classList.add("scrollon");
+                comment01.classList.add("scrollon");
+            } else {
+                customer01.classList.remove("scrollon");
+                comment01.classList.remove("scrollon");
+            }
+        
+            if (scrollY > 6000 && scrollY <= 6200) {
+                customer02.classList.add("scrollon");
+                comment02.classList.add("scrollon");
+            } else {
+                customer02.classList.remove("scrollon");
+                comment02.classList.remove("scrollon");
+            }
+        
+            if (scrollY > 6200 && scrollY <= 6400) {
+                customer03.classList.add("scrollon");
+                comment03.classList.add("scrollon");
+            } else {
+                customer03.classList.remove("scrollon");
+                comment03.classList.remove("scrollon");
+            }
+        
+            if (scrollY > 6400) {
+                customer04.classList.add("scrollon");
+                comment04.classList.add("scrollon");
+            } else {
+                customer04.classList.remove("scrollon");
+                comment04.classList.remove("scrollon");
+            }
+        });
+        
+      });// 스크롤이벤트 end
 
 }); //main end 

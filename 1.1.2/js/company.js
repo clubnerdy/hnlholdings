@@ -1,10 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
-    
-    // 🎈.slogan_section 이미지 경로 변경
-    
 
     // 🎈.ideology_section marquee
-    if(window.innerWidth > 360){
+    if(window.innerWidth > 1024){
         $('.marquee_list').marquee({
             speed: 50,
             delayBeforeStart: 0,
@@ -14,20 +11,22 @@ document.addEventListener("DOMContentLoaded", function () {
             startVisible: true,
             gap: 160,
         });
-    }else{
+    } else if(window.innerWidth <= 1024 && window.innerWidth > 480){
         $('.marquee_list').marquee({
-            speed: 20,
+            speed: 50,
             delayBeforeStart: 0,
             direction: 'left',
             duplicated: true,
             pauseOnHover: true,
             startVisible: true,
-            gap: 160,
+            gap: 32,
         });
+    } else {
+        $('.marquee_list').marquee('destroy');
     }
 
     // 🎈.keyword_section marquee
-    if(window.innerWidth > 430){
+    if(window.innerWidth > 480){
         $('.marquee-wrap01').marquee({
             speed: 80,
             delayBeforeStart: 0,
@@ -52,18 +51,16 @@ document.addEventListener("DOMContentLoaded", function () {
             delayBeforeStart: 0,
             direction: 'left',
             duplicated: true,
-            pauseOnHover: true,
             startVisible: true,
-            gap: 80,
+            gap: 16,
         });
         $('.marquee-wrap02').marquee({
             speed: 150,
             delayBeforeStart: 0,
             direction: 'left',
             duplicated: true,
-            pauseOnHover: true,
             startVisible: true,
-            gap: 80,
+            gap: 16,
         });
     }
 
